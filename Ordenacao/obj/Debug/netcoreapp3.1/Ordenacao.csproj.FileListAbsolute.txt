@@ -1,0 +1,11 @@
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\bin\Debug\netcoreapp3.1\Ordenacao.exe
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\bin\Debug\netcoreapp3.1\Ordenacao.deps.json
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\bin\Debug\netcoreapp3.1\Ordenacao.runtimeconfig.json
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\bin\Debug\netcoreapp3.1\Ordenacao.runtimeconfig.dev.json
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\bin\Debug\netcoreapp3.1\Ordenacao.dll
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\bin\Debug\netcoreapp3.1\Ordenacao.pdb
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\obj\Debug\netcoreapp3.1\Ordenacao.csprojAssemblyReference.cache
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\obj\Debug\netcoreapp3.1\Ordenacao.AssemblyInfoInputs.cache
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\obj\Debug\netcoreapp3.1\Ordenacao.AssemblyInfo.cs
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\obj\Debug\netcoreapp3.1\Ordenacao.dll
+C:\dotnet\APS 4º semestre\Ordenacao\Ordenacao\obj\Debug\netcoreapp3.1\Ordenacao.pdb
