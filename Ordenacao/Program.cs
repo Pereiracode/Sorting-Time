@@ -20,14 +20,22 @@ namespace Ordenacao
                 vet[i] = r.Next(1, 10000);
             }
 
-            int[] ordenado = new int[tamanho]; 
-            
+            int[] ordenado = new int[tamanho];
+
+            DateTime data1 = DateTime.Now;
+
             ordenado = InsertionSort(vet);
+
+            DateTime data2 = DateTime.Now;
+
+            TimeSpan ts = data2.Subtract(data1);
 
             for (int i = 0; i <= ordenado.Length - 1; i++)
             {
                 Console.WriteLine(ordenado[i]);
             }
+
+            Console.WriteLine("Tempo de ordenação: " + ts.ToString());
 
 
             #endregion
