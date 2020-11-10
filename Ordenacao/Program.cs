@@ -19,6 +19,17 @@ namespace Ordenacao
             {
                 vet[i] = r.Next(1, 10000);
             }
+
+            int[] ordenado = new int[tamanho]; 
+            
+            ordenado = InsertionSort(vet);
+
+            for (int i = 0; i <= ordenado.Length - 1; i++)
+            {
+                Console.WriteLine(ordenado[i]);
+            }
+
+
             #endregion
 
             #region Método BubleSort
@@ -91,8 +102,30 @@ namespace Ordenacao
             }*/
             #endregion
 
-            #region Outro método de ordenação
+            #region Método InsertionSort
+            int[] InsertionSort(int[] vetor)
+            {
+                if (vetor.Length <= 1) return vetor;
+
+                int j, key;
+
+                for (int i = 1; i <= vetor.Length - 1; i++)
+                {
+                    j = i - 1;
+                    key = vetor[i];
+
+                    while (j >= 0 && key < vetor[j])
+                    {
+                        vetor[j + 1] = vetor[j];
+                        j--;
+                        vetor[j + 1] = key;
+                    }
+                }
+                return vetor;
+            }
+
             #endregion
         }
+
     }
 }
