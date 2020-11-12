@@ -1,4 +1,5 @@
 ﻿using System;
+using Ordenacao.MetodosOrdenacao;
 
 namespace Ordenacao
 {
@@ -6,133 +7,90 @@ namespace Ordenacao
     {
         public static void Main(string[] args)
         {
-
-            #region Gerando aleatórios e vetor dinâmico
             Random r = new Random();
+            Buble buble = new Buble();
+            Insertion insertion = new Insertion();
+            Quick quick = new Quick();
 
-            Console.Write("Digite o tamanho do vetor: ");
-            int tamanho = int.Parse(Console.ReadLine());
+            
+            do {
 
-            int[] vet = new int[tamanho];
+                Console.Write("Digite o tamanho do vetor: ");
+                int tamanho = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i <= vet.Length - 1; i++)
-            {
-                vet[i] = r.Next(1, 10000);
-            }
+                int[] vet = new int[tamanho];
 
-            int[] ordenado = new int[tamanho];
-
-            DateTime data1 = DateTime.Now;
-
-            ordenado = InsertionSort(vet);
-
-            DateTime data2 = DateTime.Now;
-
-            TimeSpan ts = data2.Subtract(data1);
-
-            for (int i = 0; i <= ordenado.Length - 1; i++)
-            {
-                Console.WriteLine(ordenado[i]);
-            }
-
-            Console.WriteLine("Tempo de ordenação: " + ts.ToString());
-
-
-            #endregion
-
-            #region Método BubleSort
-            int[] BubleSort(int[] vetor)
-            {
-                int aux;
-                bool ordenado = false;
-
-                while (ordenado == false)
+                for (int i = 0; i <= vet.Length - 1; i++)
                 {
-                    ordenado = true;
-                    for (int i = 0; i < vetor.Length - 1; i++)
-                    {
-                        if (vetor[i] > vetor[i + 1])
-                        {
-                            aux = vetor[i + 1];
-                            vetor[i + 1] = vetor[i];
-                            vetor[i] = aux;
-                            ordenado = false;
-                        }
-                    }
+                    vet[i] = r.Next(1, 100000);
                 }
 
-                ordenado = true;
-                return vetor;
-            }
-            #endregion
-
-            #region Método QuickSort
-            /*static int[] QuickSort(int[] vetor, int inicio, int fim)
-            {
-                inicio = 0;
-                fim = vetor.Length - 1;
-
-                if (inicio < fim)
+                Console.WriteLine("=== Vetor Desordenado ===");
+                for (int i = 0; i <= vet.Length - 1; i++)
                 {
-                    int p = vetor[inicio];
-                    int i = inicio + 1;
-                    int f = fim;
-
-                    while (i <= f)
-                    {
-                        if (vetor[i] <= p)
-                        {
-                            i++;
-                        }
-                        else if (p < vetor[f])
-                        {
-                            f--;
-                        }
-                        else
-                        {
-                            int troca = vetor[i];
-                            vetor[i] = vetor[f];
-                            vetor[f] = troca;
-                            i++;
-                            f--;
-                        }
-                    }
-
-                    vetor[inicio] = vetor[f];
-
-                    vetor[f] = p;
-
-                    QuickSort(vetor, inicio, f - 1);
-
-                    QuickSort(vetor, f + 1, fim);
+                    Console.WriteLine(vet[i]);
                 }
 
-            }*/
-            #endregion
+                Console.WriteLine
+                    ("\nQual método você quer usar para ordenação?\n1-BubleSort\n2-InsertionSort\n3-QuickSort\n0-Sair");
+                int opcao = int.Parse(Console.ReadLine());
 
-            #region Método InsertionSort
-            int[] InsertionSort(int[] vetor)
-            {
-                if (vetor.Length <= 1) return vetor;
-
-                int j, key;
-
-                for (int i = 1; i <= vetor.Length - 1; i++)
+                switch (opcao)
                 {
-                    j = i - 1;
-                    key = vetor[i];
+                    case 1:
+                        int [] vetorBuble = buble.BubleSort(vet);
 
-                    while (j >= 0 && key < vetor[j])
-                    {
-                        vetor[j + 1] = vetor[j];
-                        j--;
-                        vetor[j + 1] = key;
-                    }
+                        Console.WriteLine("=== Vetor Ordenado ===");
+
+                        for (int i = 0; i <= vetorBuble.Length - 1; i++)
+                        {
+                            Console.WriteLine(vetorBuble[i]);
+                        }
+
+                        Console.WriteLine("Tempo de ordenação: " + buble.TempoOrdenacao);
+                        break;
+
+                    case 2:
+                        int[] vetorInsertion = insertion.InsertionSort(vet);
+
+                        Console.WriteLine("=== Vetor Ordenado ===");
+
+                        for (int i = 0; i <= vetorInsertion.Length - 1; i++)
+                        {
+                            Console.WriteLine(vetorInsertion[i]);
+                        }
+
+                        Console.WriteLine("Tempo de ordenação: " + insertion.TempoOrdenacao);
+                        break;
+
+                    case 3:
+                        int[] vetorQuick = quick.QuickSort(vet);
+
+                        Console.WriteLine("=== Vetor Ordenado ===");
+
+                        for (int i = 0; i <= vetorQuick.Length - 1; i++)
+                        {
+                            Console.WriteLine(vetorQuick[i]);
+                        }
+
+                        Console.WriteLine("Tempo de ordenação: " + quick.TempoOrdenacao);
+
+
+                        break;
+                    case 0:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Opção inválida !");
+                        break;
                 }
-                return vetor;
-            }
 
-            #endregion
+                
+            } while (true);
+
+
+
+
         }
 
     }
