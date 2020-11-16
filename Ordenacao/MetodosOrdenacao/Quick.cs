@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ordenacao.MetodosOrdenacao
 {
@@ -26,7 +24,6 @@ namespace Ordenacao.MetodosOrdenacao
 
         void QuickSort1(int[] vetor, int inicio, int fim)
         {
-
             if (inicio < fim)
             {
                 int p = vetor[inicio];
@@ -61,11 +58,6 @@ namespace Ordenacao.MetodosOrdenacao
 
                 QuickSort1(vetor, f + 1, fim);
             }
-
         }
-
-
-
-
     }
 }

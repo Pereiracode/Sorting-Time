@@ -36,6 +36,5 @@ namespace Ordenacao.MetodosOrdenacao
 
             return vetor;
         }
-
     }
 }
